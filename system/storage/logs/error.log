@@ -1,0 +1,10 @@
+2018-08-17 4:31:13 - PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'incom_opencart'@'%' to database ' incomfor_opencart' in /var/www/vhosts/incomfort.kz/httpdocs/system/library/db/mysqli.php on line 7
+2018-08-17 4:31:13 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /var/www/vhosts/incomfort.kz/httpdocs/system/library/db/mysqli.php on line 10
+2018-08-17 4:31:13 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /var/www/vhosts/incomfort.kz/httpdocs/system/library/db/mysqli.php on line 10
+2018-08-17 4:31:13 - PHP Notice:  Undefined variable: mysql in /var/www/vhosts/incomfort.kz/httpdocs/install/controller/install/step_3.php on line 280
+2018-08-17 4:31:13 - PHP Notice:  Trying to get property of non-object in /var/www/vhosts/incomfort.kz/httpdocs/install/controller/install/step_3.php on line 280
+2018-08-17 4:32:51 - PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'incom_opencart'@'%' to database ' incomfor_opencart' in /var/www/vhosts/incomfort.kz/httpdocs/system/library/db/mysqli.php on line 7
+2018-08-17 4:32:51 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /var/www/vhosts/incomfort.kz/httpdocs/system/library/db/mysqli.php on line 10
+2018-08-17 4:32:51 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /var/www/vhosts/incomfort.kz/httpdocs/system/library/db/mysqli.php on line 10
+2018-08-17 4:32:51 - PHP Notice:  Undefined variable: mysql in /var/www/vhosts/incomfort.kz/httpdocs/install/controller/install/step_3.php on line 280
+2018-08-17 4:32:51 - PHP Notice:  Trying to get property of non-object in /var/www/vhosts/incomfort.kz/httpdocs/install/controller/install/step_3.php on line 280

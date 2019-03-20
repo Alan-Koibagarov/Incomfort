@@ -1,0 +1,129 @@
+{#
+
+{% if categories %}
+<nav class="nav-container" role="navigation">
+	  <div class="nav-inner">
+	 
+	  <!-- ======= Меню Code START ========= -->
+		<!-- Opencart 3 level Category Меню-->
+
+		
+				
+
+		{#<div class="navbar-header"><span id="category" class="visible-xs">{{ text_category }}</span>
+		  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+		</div>#}
+{#}		
+		<div id="menu" class="main-menu responsive-menu">
+		  <div class="nav-responsive navheader" ><span>Меню</span><div class="expandable active"></div></div>
+			
+		  <ul class="nav navbar-nav">
+		  	<li class="top_level home "> <a href="{{ home }}">{{text_home}}</a></li> 
+			{% for category in categories %}
+			{% if category.children %}
+			<li class="top_level">
+				<div class="hitarea"></div>
+				<a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown"><span data-hover="{{ category.name }}">{{ category.name }}</span></a>
+
+			  <div class="dropdown-menu megamenu column{{ category.column }} ">
+				<div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+				  <ul class="list-unstyled childs_1">
+					{% for child in children %}
+					<li>
+						<div class="hitarea"></div>
+						<a href="{{ child.href }}">{{ child.name }}</a>
+					</li>
+					<li>
+						<div class="hitarea"></div>
+						<a href="http://incomfort.kz/index.php?route=product/special">АКЦИИ</a>
+					</li>
+					{% endfor %}
+				  </ul>
+				  {% endfor %}</div>
+				</div>	
+			</li>
+			{% else %}
+			<li><a href="{{ category.href }}"><span data-hover="{{ category.name }}">{{ category.name }}</span></a></li>
+			{% endif %}
+			{% endfor %}
+{#}			
+		  </ul>
+		  
+		</div>
+		<!-- ======= Меню Code END ========= -->
+		
+		
+
+	  </div>	
+	 
+	
+</nav>
+
+
+{% if categories %}
+<nav class="nav-container" role="navigation">
+	<div class="nav-inner">
+		<!-- ======= Меню Code START ========= -->
+		<!-- Opencart 3 level Category Меню-->
+
+		<div id="menu" class="main-menu">
+			<div class="nav-responsive navheader" id=""><span>Меню</span><div class="expandable"></div>	 </div>
+			
+			<ul class="nav navbar-nav">
+				<li class="top_level home"><a href="{{ home }}">{{ name }}</a></li>
+				{% for category in categories %}
+				{% if category.children %}
+				<li class="level0 top_level dropdown">
+					<a href="{{ category.href }}">{{ category.name }}</a>
+					{#<a href="{{ category.href }}"><span data-hover="{{ category.name }}">{{ category.name }}</span></a>#}
+				<div class="dropdown-menu megamenu column{{ category.column }}">
+				 <div class="dropdown-inner inner2">
+
+			  		{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+					  <ul class="list-unstyled childs_1">
+						{% for child in children %}
+						<!-- 2 Level Sub Categories START -->
+						{% if child.childs %}
+						  <li class="dropdown"><a href="{{ child.href }}">{{ child.name }}</a>
+							  <div class="dropdown-menu">
+								  <div class="dropdown-inner">
+								  {% for childs_col in child.childs|batch(child.childs|length / child.column|round(1, 'ceil')) %}
+									<ul class="list-unstyled childs_2">
+									  {% for childs_2 in childs_col %}
+										<li class="inner-child_2"><a href="{{ childs_2.href }}">{{ childs_2.name }}</a></li>
+									  {% endfor %}
+									</ul>
+								  {% endfor %}
+								  </div>
+							  </div>
+						  </li>
+						{% else %}
+
+						<li><a href="{{ child.href }}">{{ child.name }}</a></li>
+						{% endif %}
+						<!-- 2 Level Sub Categories END -->
+						{% endfor %}
+					  </ul>
+					{% endfor %}
+				
+			
+				 
+				</div>
+
+				</li>
+				{% else %}
+				<li class="top_level"><a href="{{ category.href }}">{{ category.name }}</a></li>
+				{#<li class="top_level"><a href="{{ category.href }}"><span data-hover="{{ category.name }}">{{ category.name }}</span></a></li>#}
+				{% endif %}
+				{% endfor %}
+				
+			</ul>
+			</div>
+
+		</div>
+
+		<!-- ======= Меню Code END ========= -->
+		<!-- cart here -->
+   </div>
+</nav>
+{% endif %}
